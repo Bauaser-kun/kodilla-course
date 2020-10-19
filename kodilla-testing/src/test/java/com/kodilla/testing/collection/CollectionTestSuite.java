@@ -55,6 +55,6 @@ public class CollectionTestSuite {
         expected.add(56);
         expected.add(58);
         //Then
-        Assertions.assertEquals(expected,result);
+        Assertions.assertEquals(expected, result);
     }
 }
