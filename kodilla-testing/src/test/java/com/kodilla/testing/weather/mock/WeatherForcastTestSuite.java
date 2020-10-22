@@ -45,13 +45,8 @@ class WeatherForcastTestSuite {
         temperaturesMap.put("Wagrowiec", 22.0);
         when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
-        double sumOfTemperatures = 0;
         //When
-        Set<Map.Entry<String, Double>> temperaturesSet = temperaturesMap.entrySet();
-        for (Map.Entry<String, Double> temp : temperaturesSet) {
-            sumOfTemperatures += temp.getValue();
-        }
-        double averageTemperature = Math.round((sumOfTemperatures / (weatherForecast.calculateForecast().size())) * 100.0) / 100.0;
+        double averageTemperature = weatherForecast.calculateAverageTemperature();
         //Then
         Assertions.assertEquals(23.62, averageTemperature);
     }
@@ -66,18 +61,12 @@ class WeatherForcastTestSuite {
         temperaturesMap.put("Baranowo", 20.1);
         temperaturesMap.put("Wenecja", 20.0);
         temperaturesMap.put("Krosnice", 20.5);
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
-        double median;
         //When
-        ArrayList<Double> temperatureList = new ArrayList<Double>(temperaturesMap.values());
-        Collections.sort(temperatureList);
-        if (temperatureList.size() % 2 != 0) {
-            median = (double)(temperatureList.get((temperatureList.size() - 1) / 2));
-        } else {
-            median = (double)(temperatureList.get(temperatureList.size() / 2) + temperatureList.get((temperatureList.size() -1)/ 2)) / 2.0;
-        }
+        double median = weatherForecast.calculateMedianTemperature();
         //Then
-        median = Math.round(median*100.0)/100.0;
+
         Assertions.assertEquals(20.1, median);
     }
 
@@ -92,18 +81,11 @@ class WeatherForcastTestSuite {
         temperaturesMap.put("Wenecja", 20.0);
         temperaturesMap.put("Krosnice", 20.5);
         temperaturesMap.put("Swinoujscie", 20.3);
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
-        double median;
         //When
-        ArrayList<Double> temperatureList = new ArrayList<Double>(temperaturesMap.values());
-        Collections.sort(temperatureList);
-        if (temperatureList.size() % 2 != 0) {
-            median = (double)(temperatureList.get((temperatureList.size() - 1) / 2));
-        } else {
-            median = (double)(temperatureList.get(temperatureList.size() / 2) + temperatureList.get((temperatureList.size() -1)/ 2)) / 2.0;
-        }
+        double median = weatherForecast.calculateMedianTemperature();
         //Then
-        median = Math.round(median*100.0)/100.0;
         Assertions.assertEquals(20.2, median);
     }
 }
