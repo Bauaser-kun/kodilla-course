@@ -21,7 +21,7 @@ public class StreamMain {
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);
 
         PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("Eol is a god of Wind.", text -> text.toUpperCase());
+        poemBeautifier.beautify("This should ne uppercased.", text -> text.toUpperCase());
         poemBeautifier.beautify("This should be in \"ABC\" braces.", text -> "ABC " + text + " ABC");
         poemBeautifier.beautify("While this should be underlined and yellow.", text ->"\033[4;33m" + text + "\033[0m");
         poemBeautifier.beautify("This should written in red.", text -> "\033[0;31m" + text + "\033[0m");
