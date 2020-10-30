@@ -32,6 +32,6 @@ public BigDecimal getPeopleQuantity(){
     return continentsOnWorld.stream()
             .flatMap(continent -> continent.getCountriesOnContinent().stream())
             .map(Country::getPeopleQuantity)
-            .reduce(BigDecimal.ZERO, (sum, current) -> sum = sum.add(current));
+            .reduce(BigDecimal.ZERO, (sum, current) -> sum.add(current));
 }
 }

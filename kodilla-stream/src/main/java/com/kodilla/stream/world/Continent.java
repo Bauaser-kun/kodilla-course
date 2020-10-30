@@ -5,10 +5,11 @@ package com.kodilla.stream.world;
 
 public final class Continent  {
     private final String continentName;
-    private final Set<Country> countriesOnContinent = new HashSet<>();
+    private Set<Country> countriesOnContinent = new HashSet<>();
 
-    public Continent(String continentName, Set<Country> countries) {
+    public Continent(String continentName, Set<Country> countriesOnContinent) {
         this.continentName = continentName;
+        this.countriesOnContinent = countriesOnContinent;
     }
 
     public void addCountry(Country country) {
