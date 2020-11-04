@@ -23,7 +23,8 @@ public class FirstChallenge {
             System.out.println("DIVIDING BY 0? SERIOUSLY? " +
                     "\nWell... you asked for this error:\n" + e);
         } finally {
-            System.out.println("I hope thast you got what you wanted.");
+            System.out.println("I hope that you got what you wanted.");
         }
     }
+    //git check
 }
