@@ -29,10 +29,6 @@ public class MovieStore {
         return booksTitlesWithTranslations;
     }
 
-    public static void main(String[] args) {
-
-    }
-
     public void joinTitles(String delimiter) {
         String allTitlesInOneString = new MovieStore().getMovies().entrySet().stream()
                 .flatMap(t -> t.getValue().stream())
