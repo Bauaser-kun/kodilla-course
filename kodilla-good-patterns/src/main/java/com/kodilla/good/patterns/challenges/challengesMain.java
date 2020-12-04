@@ -6,9 +6,9 @@ import com.kodilla.good.patterns.challenges.ProductOrderService.ProductOrderServ
 public class challengesMain {
     public static void main(String[] args) {
         Module13Problem1("!");
-       Module13Problem2();
-
+        Module13Problem2();
     }
+
     public static void Module13Problem1(String delimiter){
         MovieStore movieStore = new MovieStore();
         System.out.println("Problem 13.1 \"Functional titles iteration\"");
@@ -22,6 +22,4 @@ public class challengesMain {
         productOrderService.manageOrder();
         System.out.println("");
     }
-
-
 }
