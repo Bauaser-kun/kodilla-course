@@ -10,6 +10,8 @@ public class challengesMain {
         Module13Problem1("!");
         Module13Problem2();
         Module13Problem3("Gluten Free Shop", "GF Hen Laid", 22);
+        Module13Problem3("Healthy Shop", "Healthy butter", 22);
+        Module13Problem3("Extra Food Shop", "Extra Cream", 22);
     }
 
     public static void Module13Problem1(String delimiter){

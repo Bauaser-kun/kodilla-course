@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.challenges.Food2Door;
 
 import java.util.Map;
 
-public class HealthyShop implements FoodSupplier{
+public class HealthyShop implements FoodSupplier {
     ProductDatabase productDatabase = new ProductDatabase();
 
     @Override
@@ -18,5 +18,11 @@ public class HealthyShop implements FoodSupplier{
     @Override
     public void process(Order order) {
         System.out.println("thank you for buiyng at HS");
+        Map<Product, Double> newStock =  productDatabase.HSMap();
+        Product bought = newStock.keySet().stream().filter(product -> product.name().
+                            equals(order.getProductName())).findFirst().get();
+        newStock.remove(bought);
+        double leftInStock = productDatabase.HSMap().get(bought) - order.getQuantityOrdered();
+        newStock.put(bought, leftInStock);
     }
 }

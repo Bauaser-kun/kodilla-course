@@ -1,5 +1,7 @@
 package com.kodilla.good.patterns.challenges.Food2Door;
 
+import java.util.Objects;
+
 public class FruitsAndVegetables implements Product{
     private String name;
     private String type;
@@ -24,5 +26,18 @@ public class FruitsAndVegetables implements Product{
     @Override
     public String quantityUnit() {
         return quantityUnits;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FruitsAndVegetables that = (FruitsAndVegetables) o;
+        return Objects.equals(name, that.name) && Objects.equals(type, that.type) && Objects.equals(quantityUnits, that.quantityUnits);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, type, quantityUnits);
     }
 }

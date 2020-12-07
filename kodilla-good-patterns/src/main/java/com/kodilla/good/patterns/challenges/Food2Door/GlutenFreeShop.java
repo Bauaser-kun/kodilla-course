@@ -21,5 +21,10 @@ public class GlutenFreeShop implements FoodSupplier{
         Product bought = availableProducts().keySet().stream().collect(Collectors.toList()).
                 stream().filter(product -> product.name().equals(order.getProductName())).findFirst().get();
         System.out.println("Thank you for buying " + bought.name() + " at GFS");
+        Double oldValue = (Double) availableProducts().get(bought);
+        availableProducts().remove(bought);
+        availableProducts().put(new Dairy(bought.name(), bought.type(), bought.quantityUnit()), oldValue - order.getQuantityOrdered());
+        System.out.println("There are still " + (availableProducts().get(bought) - order.getQuantityOrdered())
+                + " " + bought.quantityUnit() + " left if You want more.");
     }
 }
