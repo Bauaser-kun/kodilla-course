@@ -14,11 +14,20 @@ public class ForumUSerTestSuite {
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         ForumUser forumUser = context.getBean(ForumUser.class);
     //When
-        String username = forumUser.username;
-        String username2 = forumUser.getUsername();
+        String username = forumUser.getUsername();
     //Then
         Assertions.assertEquals("John Smith", username);
-        Assertions.assertEquals("John Smith", username2);
+    }
+
+    @Test
+    public void testGetUsernameWithoutGetter(){
+        //Given
+        ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
+        ForumUser forumUser = context.getBean(ForumUser.class);
+        //When
+        String username = forumUser.username;
+        //Then
+        Assertions.assertEquals("John Smith", username);
     }
 
     @Test
