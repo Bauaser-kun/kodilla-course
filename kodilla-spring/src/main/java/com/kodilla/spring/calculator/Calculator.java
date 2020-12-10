@@ -1,0 +1,42 @@
+package com.kodilla.spring.calculator;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class Calculator {
+    @Autowired
+    private Display display;
+
+    public double addAToB(double a, double b) {
+        double result = a + b;
+
+        display.displayValue(result);
+
+        return result;
+    }
+
+    public double substractBFromA(double a, double b) {
+        double result = a - b;
+
+        display.displayValue(result);
+
+        return result;
+    }
+
+    public double multipleATimesB(double a, double b) {
+        double result = a * b;
+
+        display.displayValue(result);
+
+        return result;
+    }
+
+    public double divideATimesB(double a, double b) {
+        double result = a / b;
+
+        display.displayValue(result);
+
+        return result;
+    }
+}
