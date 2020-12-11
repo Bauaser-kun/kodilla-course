@@ -5,6 +5,10 @@ import java.util.Map;
 public class HealthyShop implements FoodSupplier {
     ProductDatabase productDatabase = new ProductDatabase();
 
+    public HealthyShop(ProductDatabase productDatabase) {
+        this.productDatabase = productDatabase;
+    }
+
     @Override
     public String name() {
         return "Healthy Shop";
