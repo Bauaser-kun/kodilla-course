@@ -1,8 +1,5 @@
 package com.kodilla.good.patterns.challenges;
-
 import com.kodilla.good.patterns.challenges.FlightConnectionService.FlightSearchEngine;
-import com.kodilla.good.patterns.challenges.Food2Door.FoodSupplierDatabase;
-import com.kodilla.good.patterns.challenges.Food2Door.OrderProcessor;
 import com.kodilla.good.patterns.challenges.MovieStore.MovieStore;
 import com.kodilla.good.patterns.challenges.ProductOrderService.ProductOrderService;
 
@@ -10,9 +7,7 @@ public class challengesMain {
     public static void main(String[] args) {
         Module13Problem1("!");
         Module13Problem2();
-        Module13Problem3("Gluten Free Shop", "GF Hen Laid", 22);
-        Module13Problem3("Healthy Shop", "Healthy butter", 22);
-        Module13Problem3("Extra Food Shop", "Extra Cream", 22);
+
         Module13Problem4("GDN", "KRK");
     }
 
@@ -28,14 +23,6 @@ public class challengesMain {
         ProductOrderService productOrderService = new ProductOrderService();
         productOrderService.manageOrder();
         System.out.println("");
-    }
-
-    private static void Module13Problem3(String supplierName, String productName, double quantity) {
-        System.out.println("Problem 13.3 \"Food2Door\"");
-        OrderProcessor orderProcessor = new OrderProcessor();
-        FoodSupplierDatabase foodSupplierDatabase = new FoodSupplierDatabase();
-        foodSupplierDatabase.fillSupplierDatabase();
-        orderProcessor.processOrder(foodSupplierDatabase.getSupllier(supplierName), productName, quantity);
     }
 
     private static void Module13Problem4(String departureAirport, String arrivalAirport) {
