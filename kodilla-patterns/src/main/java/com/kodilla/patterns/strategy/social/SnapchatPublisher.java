@@ -1,4 +1,4 @@
-package com.kodilla.patterns.Strategy.social;
+package com.kodilla.patterns.strategy.social;
 
 public class SnapchatPublisher implements SocialPublisher {
     public String socialPublisherName = "Snapchat";

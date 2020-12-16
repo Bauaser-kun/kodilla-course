@@ -1,6 +1,5 @@
 package com.kodilla.patterns.strategy.social;
 
-import com.kodilla.patterns.Strategy.social.*;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

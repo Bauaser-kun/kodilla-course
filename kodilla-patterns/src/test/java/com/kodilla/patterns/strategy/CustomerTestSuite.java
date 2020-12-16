@@ -1,10 +1,6 @@
 package com.kodilla.patterns.strategy;
 
-import com.kodilla.patterns.Strategy.CorporateCustomer;
-import com.kodilla.patterns.Strategy.Customer;
-import com.kodilla.patterns.Strategy.IndividualCustomer;
-import com.kodilla.patterns.Strategy.IndividualYoungCustomer;
-import com.kodilla.patterns.Strategy.predictors.AggressivePredictor;
+import com.kodilla.patterns.strategy.predictors.AggressivePredictor;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

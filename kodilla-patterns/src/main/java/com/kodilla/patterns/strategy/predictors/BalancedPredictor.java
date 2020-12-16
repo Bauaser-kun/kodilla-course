@@ -1,6 +1,6 @@
-package com.kodilla.patterns.Strategy.predictors;
+package com.kodilla.patterns.strategy.predictors;
 
-import com.kodilla.patterns.Strategy.BuyPredictor;
+import com.kodilla.patterns.strategy.BuyPredictor;
 
 public class BalancedPredictor implements BuyPredictor {
     @Override

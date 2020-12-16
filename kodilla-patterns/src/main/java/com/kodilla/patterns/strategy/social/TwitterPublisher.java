@@ -1,4 +1,4 @@
-package com.kodilla.patterns.Strategy.social;
+package com.kodilla.patterns.strategy.social;
 
 public class TwitterPublisher implements SocialPublisher {
     public String socialPublisherName = "Twitter";
