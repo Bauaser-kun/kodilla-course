@@ -1,0 +1,70 @@
+CREATE TABLE ISSUESLISTS
+(
+ID SERIAL PRIMARY KEY,
+NAME VARCHAR(150)
+);
+
+CREATE TABLE ISSUES
+(
+ID SERIAL PRIMARY KEY,
+ISSUESLIST_ID BIGINT UNSIGNED NOT NULL,
+FOREIGN KEY (ISSUESLIST_ID) REFERENCES ISSUESLISTS(ID),
+SUMMARY VARCHAR (150),
+DESCRIPTION VARCHAR (2048),
+USER_ID_ASSIGNED_TO BIGINT UNSIGNED NOT NULL,
+FOREIGN KEY (USER_ID_ASSIGNED_TO) REFERENCES USERS(ID)
+);
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("ToDo");
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("In progress");
+
+INSERT INTO ISSUESLISTS (NAME)
+VALUES ("Done");
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (3, "GET STARTER FROM OAK", "GO TO PROFFESOR'S OAK LAB AND CHOOSE STARTER FOR YOUR JOURNEY", 2);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (1, "BEAT THE ELITE FOUR", "Go to Indigo Plateu and fight Lorelei, Bruno, Agatha and Lance consecutively", 5);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (1, "GET VOLCANO BADGE", "Find riddle master Blaine on Cinnabar island and win badge", 1);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (1, "GO TO HOEN", "Help SS ANNE's captain cure his sickness so he would be able to sail to Hoen Region with you", 5);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (1, "FIND SINJOH TEMPLE", "Meet with the Cynthia, and together try finding out where Sinjoh temple could be", 2);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (1, "MEET WITH LYSANDRE", "The Lysandre Labs has created something rather unusual... better check it out", 1);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (2, "STOP TEAM FLARE", "Team Flare found ancient weapon and is going to use it in Kalos. You need to stop them!", 5);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (2, "STOP TEAM FLARE P.2", "Lysandre did not come here to stop Team Flare... He is their Leader! It could'nt be worse...", 4);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (2, "BEAT SINNOH CHAMPION", "Apparantly this nice lady Cynthia is an Sinnoh Elite Four Leader. If you want to become Sinnoh champion you have to win the title from her.", 3);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (2, "CLOSE DIMENSIONAL VORTEX", "Two dimentional vortexes showed up and have to be closed both at the same time. Cynthia will take care of one...", 1);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (2, "COLLECT ALL APRICOTS", "Find every possible kind of apricot. Kurt will reward you forit", 1);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (3, "INVESTIGATE WHIRLS ISLAND", "many new whirlpools was created near those islands... find out what caused them", 3);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (3, "INVESTIGATE BELL TOWER", "After capturing sea guardian mysterious sightings happened near Bell Tower.", 5);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (3, "GET AT THE TOP OF MOUNT SILVER", "The emergency situation needs a true legend... they say that RED has hidden himself at Mount Silver. Find him. Bring him back.", 4);
+
+INSERT INTO ISSUES (ISSUESLIST_ID, SUMMARY, DESCRIPTION, USER_ID_ASSIGNED_TO)
+VALUES (3, "TAKE BLAINE TO CERULEAN CAVE", "You need to take Blaine to Cerulean Cave. And Fast.", 4);
