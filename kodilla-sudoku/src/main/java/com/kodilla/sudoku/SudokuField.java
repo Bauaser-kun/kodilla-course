@@ -3,7 +3,6 @@ package com.kodilla.sudoku;
 import java.util.ArrayList;
 
 public class SudokuField {
-    int fieldNumber;
     ArrayList<SudokuElement> field = new ArrayList<>();
 
     public void createField(SudokuBoard board, int fieldNumber) {

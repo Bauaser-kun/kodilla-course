@@ -21,13 +21,12 @@ public class SudokuGame {
             if(isSafe(board, i + 1, row, column)) {
                 board.setElementInRow(row, column, i + 1);
             if (resolveSudoku(board)) {
-                return true;
+              return true;
                 }
 
             board.getBoard().get(row).getRow().get(column).setValue(-1);
             }
         }
-
         return false;
     }
 
@@ -186,36 +185,5 @@ public class SudokuGame {
         SudokuBoard board = new SudokuBoard();
         board.createBoard();
         return board;
-    }
-
-    public boolean checkPossibleValue(SudokuBoard board, int row, int column, int value) {
-        int fieldNumber = getFieldNumber(row - 1, column - 1);
-        for (int i = 0; i < 9 && i != row; i ++) {
-            for (int j = 0; j < board.getBoard().get(row - 1).getRow().get(i).possibleValues.size(); j++) {
-                if(board.getBoard().get(row - 1).getRow().get(i).possibleValues.get(j) == value) {
-                    return true;
-                }
-            }
-        }
-
-        for(int i = 0; i < 9 && i != column; i++) {
-            for (int j = 0; j < board.getBoard().get(i).getRow().get(column - 1).possibleValues.size(); j++) {
-                if (board.getBoard().get(i).getRow().get(column - 1).possibleValues.get(j) == value) {
-                    return true;
-                }
-            }
-        }
-
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < board.getFields().get(fieldNumber).getField().get(i).possibleValues.size(); j++) {
-                if(board.getFields().get(fieldNumber).getField().get(i).possibleValues.get(j) == value &&
-                 (board.getBoard().get(row).getRow().get(column).hashCode() !=
-                 board.getFields().get(fieldNumber).getField().get(i).hashCode())) {
-    return true;
-                }
-            }
-        }
-
-        return false;
     }
 }

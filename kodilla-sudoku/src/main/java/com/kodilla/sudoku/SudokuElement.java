@@ -9,9 +9,6 @@ public class SudokuElement {
     private int value = EMPTY;
     ArrayList<Integer> possibleValues = new ArrayList<>();
 
-   // public SudokuElement() {
-   // }
-
     public void fillPossibleValues(){
         for (int i = 1; i <= 9; i++) {
             possibleValues.add(i);
@@ -23,12 +20,6 @@ public class SudokuElement {
         if (possibleValues.get(i) == value) {
             possibleValues.remove(i);
             }
-        }
-    }
-
-    public void showPossibleValues() {
-        for (Integer value : possibleValues) {
-            System.out.println(value);
         }
     }
 

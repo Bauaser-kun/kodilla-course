@@ -21,28 +21,12 @@ public class SudokuBoard {
         }
     }
 
-    public void removeOneValueFromColumnPossibleValues(SudokuBoard board, int columnNumber, int value) {
-        for (int i = 0; i < 9; i++) {
-            board.board.get(i).getRow().get(columnNumber).removeValueFromPossibleValues(value);
-        }
-    }
-
-    public void removeOneValueFromFieldPossibleValues(SudokuBoard board, int fieldNumber, int value) {
-        for (int i = 0; i < 9; i++) {
-            board.getFields().get(fieldNumber).getField().get(i).removeValueFromPossibleValues(value);
-        }
-    }
-
     public List<SudokuField> getFields() {
         return fields;
     }
 
     public List<SudokuRow> getBoard() {
         return board;
-    }
-
-    public void showRow(int number) {
-        System.out.println(board.get(number));
     }
 
     @Override
@@ -64,10 +48,6 @@ public class SudokuBoard {
             printBoard.append("\n");
         }
         return printBoard.toString();
-    }
-
-    public void setBoard(List<SudokuRow> board) {
-        this.board = board;
     }
 
     public void setElementInRow(int row, int element, int value) {
