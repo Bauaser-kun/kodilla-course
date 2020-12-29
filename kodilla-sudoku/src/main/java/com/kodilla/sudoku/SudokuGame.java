@@ -132,7 +132,7 @@ public class SudokuGame {
     }
 
     public boolean checkValue(SudokuBoard board, int row, int column, int value) {
-    int fieldNumber = getFieldNumber(row - 1, column - 1);
+    int fieldNumber = numberFields(row - 1, column - 1);
         for (int i = 0; i < 9; i++) {
         if((board.getBoard().get(row - 1).getRow().get(i).getValue() != -1) &&
             (board.getBoard().get(row - 1).getRow().get(i).getValue() == value)) {
@@ -147,7 +147,7 @@ public class SudokuGame {
         return false;
     }
 
-    public int getFieldNumber(int row, int column) {
+    public int numberFields(int row, int column) {
         if(row < 3 && column < 3) {
             return 0;
         } else if(row < 3 && column >= 3 && column < 6) {

@@ -11,7 +11,7 @@ public class SudokuApplication {
         while (!gameFinished) {
             SudokuGame game = new SudokuGame();
             SudokuBoard board = game.createNewBoard();
-            board.createFields(board);
+            board.separateFieldsOnBoard(board);
             game.showBoard(board);
             game.fillSudoku(board);
             sudokuResolved = game.resolveSudoku(board);

@@ -14,7 +14,7 @@ public class SudokuBoard {
         }
     }
 
-    public void createFields(SudokuBoard board) {
+    public void separateFieldsOnBoard(SudokuBoard board) {
         for (int i = 0; i < 9; i++) {
             fields.add(new SudokuField());
             fields.get(i).createField(board, i);
