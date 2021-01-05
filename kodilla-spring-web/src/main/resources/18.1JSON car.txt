@@ -1,0 +1,22 @@
+{
+"make":"Renault",
+"model":"Grand Scenic",
+"seats":[{
+"seatType":"Driver",
+"material":"Leather",
+"color":"magenta ;P"},
+{
+"seatType":"Passenger",
+"material":"cloth",
+"color":"beige"},
+{
+"seatType":"backSeat",
+"material":"someWeirdMaterialWeirderThanWood",
+"color":"ColdOceansDepthsBlue"},
+{
+"seatType":"backSeat",
+"material":"Wood",
+"color":"charcoal-like"},
+],
+"fuelTankCapacity":"Electric Car, battery AAA, (300pcs needed)"
+}
