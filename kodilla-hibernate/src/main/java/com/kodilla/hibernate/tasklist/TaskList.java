@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "TASKLISTS")
@@ -64,5 +65,18 @@ public class TaskList {
 
     private void setTasks(List<Task> tasks) {
         this.tasks = tasks;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TaskList taskList = (TaskList) o;
+        return id == taskList.id && listName.equals(taskList.listName) && description.equals(taskList.description) && tasks.equals(taskList.tasks);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, listName, description, tasks);
     }
 }

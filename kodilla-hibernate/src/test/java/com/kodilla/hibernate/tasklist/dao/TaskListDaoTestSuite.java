@@ -33,7 +33,7 @@ public class TaskListDaoTestSuite {
 
         //Then
         assertEquals(1, taskLists.size());
-        //assertEquals(taskList.hashCode(), taskLists.get(0).hashCode())
+        //assertEquals(taskList.hashCode(), taskLists.get(0).hashCode());
         assertEquals(NAME, taskLists.get(0).getListName());
         assertEquals(DESCRIPTION, taskLists.get(0).getDescription());
 
