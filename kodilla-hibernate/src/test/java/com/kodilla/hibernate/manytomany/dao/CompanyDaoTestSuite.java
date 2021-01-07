@@ -3,8 +3,10 @@ package com.kodilla.hibernate.manytomany.dao;
 import com.kodilla.hibernate.manytomany.Company;
 import com.kodilla.hibernate.manytomany.Employee;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
@@ -98,7 +100,8 @@ public class CompanyDaoTestSuite {
         List<Employee> lastnameFilteredEmployees = employeeDao.findEmployeeWithSurname("Smith");
 
         //Then
-        assertEquals(1, lastnameFilteredEmployees);
+        assertEquals(1, lastnameFilteredEmployees.size());
+        assertEquals(johnSmith, lastnameFilteredEmployees.get(0));
 
 
         //CleanUp
@@ -144,7 +147,7 @@ public class CompanyDaoTestSuite {
         List<Company> datCompanies = companyDao.retrieveCompaniesBeginnigWith("dat");
 
         //Then
-        assertEquals(1, datCompanies);
+        assertEquals(1, datCompanies.size());
 
         //CleanUp
         try {
