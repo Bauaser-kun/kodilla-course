@@ -10,8 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
 
 @SpringBootTest
 public class CompanyDaoTestSuite {
@@ -101,7 +100,9 @@ public class CompanyDaoTestSuite {
 
         //Then
         assertEquals(1, lastnameFilteredEmployees.size());
-        assertEquals(johnSmith, lastnameFilteredEmployees.get(0));
+        assertEquals("Smith", lastnameFilteredEmployees.get(0).getLastname());
+        assertTrue(softwareMachine.getEmployees().get(0).getLastname()
+                .equals(lastnameFilteredEmployees.get(0).getLastname()));
 
 
         //CleanUp
@@ -112,6 +113,7 @@ public class CompanyDaoTestSuite {
         } catch (Exception e) {
             //do nothing
         }
+        //Printscreens in 'resources'
     }
 
     @Test
@@ -148,6 +150,8 @@ public class CompanyDaoTestSuite {
 
         //Then
         assertEquals(1, datCompanies.size());
+        assertEquals(datCompanies.get(0).getName(), dataMaesters.getName());
+        assertTrue(dataMaesters.getName().equals(datCompanies.get(0).getName()));
 
         //CleanUp
         try {
@@ -157,5 +161,6 @@ public class CompanyDaoTestSuite {
         } catch (Exception e) {
             //do nothing
         }
+        //Printscreens in 'resources'
     }
 }
