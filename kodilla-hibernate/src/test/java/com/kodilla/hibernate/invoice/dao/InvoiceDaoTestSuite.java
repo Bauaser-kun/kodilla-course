@@ -42,12 +42,18 @@ public class InvoiceDaoTestSuite {
         //When
         invoiceDao.save(invoice);
         int id = invoice.getId();
+        Invoice loadedFromDB = invoiceDao.findById(id).get();
+
 
         //Then
         assertNotEquals(0, id);
         assertEquals(2, invoice.getItems().size());
+        assertEquals(2, loadedFromDB.getItems().size());
+        assertEquals("product 1", loadedFromDB.getItems().get(0).getProduct().getName());
+        assertEquals("product 2", loadedFromDB.getItems().get(1).getProduct().getName());
         assertEquals(invoice.getNumber(), item.getInvoice().getNumber(), product.getItems().get(0).getInvoice().getNumber());
         assertEquals(product.getName(), invoice.getItems().get(0).getProduct().getName());
+
 
         //Cleanup
         invoiceDao.delete(invoice);
