@@ -12,7 +12,7 @@ query = "SELECT * FROM COMPANIES WHERE " +
 resultClass = Company.class)
 @NamedQuery(
         name = "Company.findByPartName",
-        query = "FROM Company WHERE name LIKE CONCAT(\\'%\\',:COMPANY_NAME, \\'%\\')"
+        query = "FROM Company WHERE name LIKE CONCAT(\'%\',:COMPANY_NAME, \'%\')"
 )
 @Entity
 @Table(name = "COMPANIES")
