@@ -90,7 +90,7 @@ public class FacadeTestSuite {
 
         //Then
         try {
-            facadeSearcher.findEmplyeesByNamePart("Ko");
+            facadeSearcher.findEmplyeesByNamePart("Kov");
         } catch (FacadeExceptions e) {
 
         }

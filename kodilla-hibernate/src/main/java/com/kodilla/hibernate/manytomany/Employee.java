@@ -11,7 +11,7 @@ import java.util.List;
 )
 @NamedQuery(
         name = "Employee.findByPartName",
-        query = "FROM Employee WHERE name LIKE CONCAT(\'%\',:LASTNAME, \'%\')"
+        query = "FROM Employee WHERE lastname LIKE CONCAT(\'%\',:LASTNAME, \'%\')"
 )
 @Entity
 @Table(name = "EMPLOYEES")

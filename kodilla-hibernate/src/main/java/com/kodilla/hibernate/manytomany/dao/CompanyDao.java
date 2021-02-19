@@ -15,5 +15,5 @@ public interface CompanyDao extends CrudRepository<Company, Integer> {
     List<Company> retrieveCompaniesBeginnigWith(@Param("INITIALS") String initials);
 
 @Query
-List<Company> findCompanyByPartName(@Param("COMPANY_NAME") String partName);
+List<Company> findByPartName(@Param("COMPANY_NAME") String PartName);
 }

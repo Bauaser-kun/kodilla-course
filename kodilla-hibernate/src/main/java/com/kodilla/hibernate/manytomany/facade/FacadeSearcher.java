@@ -7,7 +7,6 @@ import com.kodilla.hibernate.manytomany.dao.EmployeeDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,7 +22,7 @@ public final class FacadeSearcher {
 
     public List<Company> findCompaniesByNamePart (String partName) throws FacadeExceptions {
         boolean wasError = false;
-        List<Company> companies = companyDao.findCompanyByPartName(partName);
+        List<Company> companies = companyDao.findByPartName(partName);
         LOGGER.info("Searching company ");
         if (companies.size() <= 0) {
             LOGGER.error(FacadeExceptions.ERR_COMPANY_NOT_FOUND);
@@ -38,7 +37,7 @@ public final class FacadeSearcher {
 
     public List<Employee> findEmplyeesByNamePart (String partName) throws FacadeExceptions {
         boolean wasError = false;
-        List<Employee> employees = employeeDao.findEmployeeByPartName(partName);
+        List<Employee> employees = employeeDao.findByPartName(partName);
         LOGGER.info("Searching Employee ");
         if (employees.size() <= 0) {
             LOGGER.error(FacadeExceptions.ERR_EMPLOYEE_NOT_FOUND);

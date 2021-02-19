@@ -7,7 +7,7 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.retrieveCompaniesBeginnigWith",
-query = "SELECT * FROM COMPANIES WHERE " +
+        query = "SELECT * FROM COMPANIES WHERE " +
         "SUBSTRING(COMPANY_NAME, 1, 3) = :INITIALS",
 resultClass = Company.class)
 @NamedQuery(
