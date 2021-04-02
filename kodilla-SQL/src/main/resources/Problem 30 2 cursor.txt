@@ -11,7 +11,7 @@ BEGIN
       SET result = true;					                        
    END IF;				    				                               
    RETURN result;
-END $$Bestseller
+END $$
 
 DELIMITER ;            
 
