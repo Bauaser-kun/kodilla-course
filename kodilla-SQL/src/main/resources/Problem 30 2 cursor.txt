@@ -7,8 +7,8 @@ DELIMITER $$
 CREATE FUNCTION Bestseller(monthly_booksrented INT) RETURNS BOOL DETERMINISTIC 
 BEGIN									                                    
    DECLARE result BOOL DEFAULT 0;	                
-   IF booksrented > 2 THEN						                        
-      SET result = 1;					                        
+   IF monthly_booksrented > 2 THEN						                        
+      SET result = true;					                        
    END IF;				    				                               
    RETURN result;
 END $$Bestseller
