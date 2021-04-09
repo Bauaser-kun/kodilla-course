@@ -75,31 +75,31 @@ public class CrudAppTestSuite {
     private boolean checkTaskExistsInTrello(String taskName) throws InterruptedException {
         final String TRELLO_URL = "https://trello.com/login";
         boolean result = false;
-        WebDriver driverTrello = WebDriverConfig.getDriver(WebDriverConfig.CHROME);	// [1]
-        driverTrello.get(TRELLO_URL);                                                // [2]
+        WebDriver driverTrello = WebDriverConfig.getDriver(WebDriverConfig.CHROME);
+        driverTrello.get(TRELLO_URL);
 
-        driverTrello.findElement(By.id("user")).sendKeys("bauaser.kun@gmail.com");		        // [3]
-        driverTrello.findElement(By.id("password")).sendKeys("Kamehameha");		    // [4]
+        driverTrello.findElement(By.id("user")).sendKeys("bauaser.kun@gmail.com");
+        driverTrello.findElement(By.id("password")).sendKeys("Kamehameha");
         WebElement el = driverTrello.findElement(By.id("login"));
-        el.submit();									                                // [5]
+        el.submit();
 
-        Thread.sleep(4000);								                            // [6]
+        Thread.sleep(4000);
 
-        driverTrello.findElement(By.id("password")).sendKeys("Kamehameha");		    // [7]
+        driverTrello.findElement(By.id("password")).sendKeys("Kamehameha");
         driverTrello.findElement(By.id("login-submit")).submit();
 
-        Thread.sleep(4000);								                            // [8]
+        Thread.sleep(4000);
 
-        driverTrello.findElements(By.xpath("//a[@class=\"board-tile\"]")).stream()  // [9]
-                .filter(aHref -> aHref.findElements(By.xpath(".//div[@title=\"Kodilla Application\"]")).size() > 0)  // [10]
-                .forEach(WebElement::click);						                        // [11]
+        driverTrello.findElements(By.xpath("//a[@class=\"board-tile\"]")).stream()
+                .filter(aHref -> aHref.findElements(By.xpath(".//div[@title=\"Kodilla Application\"]")).size() > 0)
+                .forEach(WebElement::click);
 
-        Thread.sleep(4000);								                            // [12]
+        Thread.sleep(4000);
 
-        result = driverTrello.findElements(By.xpath("//span")).stream()		        // [13]
-                .anyMatch(theSpan -> theSpan.getText().equals(taskName));    		        // [14]
+        result = driverTrello.findElements(By.xpath("//span")).stream()
+                .anyMatch(theSpan -> theSpan.getText().equals(taskName));
 
-        driverTrello.close();							                            // [15]
+        driverTrello.close();
 
         return result;
     }
